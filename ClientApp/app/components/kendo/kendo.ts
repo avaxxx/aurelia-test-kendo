@@ -11,5 +11,9 @@ export class Kendokendo {
     }
   });
   }
+
+  onChange(){
+    console.log('Change');
+  }
   
 }
