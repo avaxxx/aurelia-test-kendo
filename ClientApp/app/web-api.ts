@@ -39,7 +39,7 @@ let contacts = [
     firstName:'Roger',
     lastName:'Green',
     email:'green@inklings.com',
-    phoneNumber:'867-5309'
+    phoneNumber:'867-5309' 
   }
 ];
 
