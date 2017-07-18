@@ -61,7 +61,7 @@ namespace WebApplicationBasic
                 _.Schema = _settings.Schema;
                 _.Query = request.Query;
                 _.OperationName = request.OperationName;
-                _.Inputs = request.Variables.ToInputs();
+                //_.Inputs = request.Variables.ToString().ToInputs();
             });
 
             await WriteResponseAsync(context, result);

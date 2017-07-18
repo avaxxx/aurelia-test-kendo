@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GraphQL;
+using GraphQL.Http;
+using GraphQL.StarWars;
+using GraphQL.StarWars.Types;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -28,6 +33,18 @@ namespace WebApplicationBasic
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+            services.AddSingleton<IDocumentWriter, DocumentWriter>();
+
+            services.AddSingleton<StarWarsData>();
+            services.AddSingleton<StarWarsQuery>();
+            services.AddSingleton<StarWarsMutation>();
+            services.AddSingleton<HumanType>();
+            services.AddSingleton<HumanInputType>();
+            services.AddSingleton<DroidType>();
+            services.AddSingleton<CharacterInterface>();
+            services.AddSingleton<ISchema>(s => new StarWarsSchema(type => (GraphType) s.GetService(type)));
+
             // Add framework services.
             services.AddMvc();
         }
@@ -52,6 +69,11 @@ namespace WebApplicationBasic
             }
 
             app.UseStaticFiles();
+
+            app.UseMiddleware<GraphQLMiddleware>(new GraphQLSettings
+            {
+                Schema = app.ApplicationServices.GetService<ISchema>()
+            });
 
             app.UseMvc(routes =>
             {

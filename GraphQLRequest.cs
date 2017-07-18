@@ -1,3 +1,5 @@
+using Newtonsoft.Json.Linq;
+
 namespace WebApplicationBasic
 {
     public class GraphQLRequest

@@ -18,19 +18,18 @@ import gql from 'graphql-tag';
     
         const client = new ApolloClient({
         networkInterface: createNetworkInterface({
-            uri: 'http://localhost:47080/api/graphql',
+            uri: 'graphql',
         }),
         });
 
         client.query({
         query: gql`
-            query TodoApp {
-            todos {
-                id
-                text
-                completed
-            }
-            }
+            query {
+                  hero {
+                    id
+                    name
+                  }
+                }
         `,
         })
         .then(data => console.log(data))
