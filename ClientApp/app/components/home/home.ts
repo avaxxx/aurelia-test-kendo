@@ -31,7 +31,7 @@ import gql from 'graphql-tag';
                   }
                 }
         `,
-        })
+        }) 
         .then(data => console.log(data))
         .catch(error => console.error(error));
 }

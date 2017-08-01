@@ -8,9 +8,9 @@ export function configure(aurelia: Aurelia) {
     aurelia.use.standardConfiguration()
         .plugin(PLATFORM.moduleName('aurelia-kendoui-bridge'));
 
-    if (IS_DEV_BUILD) {
+    // if (IS_DEV_BUILD) {
         aurelia.use.developmentLogging();
-    }
+    //}
 
     aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app/components/app/app')));
 }

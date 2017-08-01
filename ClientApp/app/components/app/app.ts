@@ -35,6 +35,14 @@ export class App {
             moduleId: PLATFORM.moduleName('../kendo/kendo'),
             nav: true,
             title: 'Kendo demo'
+        },
+        {
+            route: 'react',
+            name: 'react',
+            settings: { icon: 'th-list' },
+            moduleId: PLATFORM.moduleName('../react/react'),
+            nav: true,
+            title: 'React demo'
         }]);
 
         this.router = router;
