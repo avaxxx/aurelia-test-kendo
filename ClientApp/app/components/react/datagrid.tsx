@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { inject, bindable, noView } from 'aurelia-framework';
 import { HelloWorld } from './HelloWorld';
 
+
 @noView()
 @inject(Element)
 export class DatagridCustomElement {
@@ -10,9 +11,13 @@ export class DatagridCustomElement {
         this.element = element;
     }
 
+
+
+
+
     render() {
         ReactDOM.render(
-            <HelloWorld />,
+           <HelloWorld/>,
             this.element
         );
     }
