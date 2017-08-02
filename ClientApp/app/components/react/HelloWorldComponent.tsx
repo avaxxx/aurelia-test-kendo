@@ -7,7 +7,7 @@ class ToggleState {
     selectValue:string
 }
 
-class HelloWorld extends React.Component<any, ToggleState> {
+class HelloWorldComponent extends React.Component<any, ToggleState> {
     options: any;
     state: any;
     constructor(props: any) {
@@ -44,5 +44,5 @@ class HelloWorld extends React.Component<any, ToggleState> {
 }
 
 export{
-    HelloWorld
+    HelloWorldComponent
 }

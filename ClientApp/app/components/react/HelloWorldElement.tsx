@@ -1,12 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { inject, bindable, noView } from 'aurelia-framework';
-import { HelloWorld } from './HelloWorld';
+import { customElement,inject, bindable, noView } from 'aurelia-framework';
+import { HelloWorldComponent } from './HelloWorldComponent';
 
 
 @noView()
 @inject(Element)
-export class DatagridCustomElement {
+@customElement('hello-world-element')
+export class HelloWorldElement {
     constructor(private element: Element){
         this.element = element;
     }
@@ -17,7 +18,7 @@ export class DatagridCustomElement {
 
     render() {
         ReactDOM.render(
-           <HelloWorld/>,
+           <HelloWorldComponent/>,
             this.element
         );
     }
