@@ -4,6 +4,9 @@ import { customElement,inject, bindable, noView } from 'aurelia-framework';
 import { HelloWorldComponent } from './HelloWorldComponent';
 
 
+
+
+
 @noView()
 @inject(Element)
 @customElement('hello-world-element')
