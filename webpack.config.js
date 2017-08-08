@@ -3,9 +3,11 @@ const webpack = require('webpack');
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const bundleOutputDir = './wwwroot/dist';
+// const htmlAureliaLoader = require("aurelia-webpack-plugin/dist/html-requires-loader");
 
 module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
+    // htmlAureliaLoader.attributes["router-view"] = [ "layout-view", "layout-view-model" ];
     return [{
         stats: { modules: false },
         entry: { 'app': 'aurelia-bootstrapper' },
