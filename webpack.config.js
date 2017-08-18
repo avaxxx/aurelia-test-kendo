@@ -31,7 +31,8 @@ module.exports = (env) => {
                     loader: ['style-loader', 'css-loader'],
                     issuer: /\.[tj]s$/i
                 },
-                { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
+                { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' },
+                { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, loader: 'url-loader?limit=100000' },                
             ]
         },
         plugins: [

@@ -2,11 +2,14 @@ import 'isomorphic-fetch';
 import { Aurelia, PLATFORM } from 'aurelia-framework';
 // import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
+import 'materialize-css';
 declare const IS_DEV_BUILD: boolean; // The value is supplied by Webpack during the build
 
 export function configure(aurelia: Aurelia) {
     aurelia.use.standardConfiguration()
-        .plugin(PLATFORM.moduleName('aurelia-kendoui-bridge'));
+        .plugin(PLATFORM.moduleName('aurelia-kendoui-bridge'))
+        .plugin(PLATFORM.moduleName('aurelia-materialize-bridge'), b => b.useAll());  
+        
 
     // if (IS_DEV_BUILD) {
         aurelia.use.developmentLogging();
