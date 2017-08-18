@@ -1,3 +1,6 @@
+import  '../../../../kendo/js/kendo.dropdownlist.min';
+
+
 export class Kendokendo {
   private dataSource : kendo.data.DataSource;
 

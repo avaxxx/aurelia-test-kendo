@@ -9,7 +9,7 @@ module.exports = ({ prod } = {}) => {
     return [{
         stats: { modules: false },
         resolve: {
-            extensions: ['.js']
+            extensions: ['.js']            
         },
         module: {
             loaders: [

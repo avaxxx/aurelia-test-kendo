@@ -13,7 +13,7 @@ module.exports = (env) => {
         entry: { 'app': 'aurelia-bootstrapper' },
         resolve: {
             extensions: ['.js', '.jsx', '.ts', '.tsx'],
-            modules: ['ClientApp', 'node_modules'],
+            modules: ['ClientApp', 'node_modules', 'kendo/js'],
         },
         output: {
             path: path.resolve(bundleOutputDir),
@@ -37,6 +37,11 @@ module.exports = (env) => {
         plugins: [
             new CheckerPlugin(),
             new webpack.DefinePlugin({ IS_DEV_BUILD: JSON.stringify(isDevBuild) }),
+            new webpack.ProvidePlugin({
+                '$': 'jquery',
+                'jQuery': 'jquery',
+                'window.jQuery': 'jquery',
+              }),
             new webpack.DllReferencePlugin({
                 context: __dirname,
                 manifest: require('./wwwroot/dist/vendor-manifest.json')
