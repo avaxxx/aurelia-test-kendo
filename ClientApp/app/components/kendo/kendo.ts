@@ -1,4 +1,5 @@
-// import  '../../../../kendo/js/kendo.dropdownlist.min';
+import '../../../../kendo/js/kendo.dropdownlist.min';
+// import '@types/kendo-ui'
 
 
 export class Kendokendo {

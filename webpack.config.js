@@ -23,7 +23,7 @@ module.exports = (env) => {
         module: {
             rules: [
                 { test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
-                { test: /\.ts$/i, include: /ClientApp/, use: 'ts-loader?silent=true' },
+                { test: /\.ts$/i, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
                 { test: /\.html$/i, use: 'html-loader' },
                 { test: /\.css$/i, use: isDevBuild ? 'css-loader' : 'css-loader?minimize' },
                 {
