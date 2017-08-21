@@ -1,4 +1,4 @@
-// import "../../../../node_modules/materialize-css/dist/css/materialize.css"
+// import "materialize-css/dist/css/materialize.css"
 
 export class Materialise{
     food = [
